@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_21_070131) do
+ActiveRecord::Schema.define(version: 2024_05_16_111110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(version: 2024_02_21_070131) do
     t.string "app_url"
     t.boolean "is_read", default: false
     t.datetime "read_at"
-    t.integer "user_id", null: false
     t.boolean "action_needed", default: false
     t.integer "guest_id"
     t.string "notification_type"
     t.integer "notification_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -213,6 +213,7 @@ ActiveRecord::Schema.define(version: 2024_02_21_070131) do
     t.integer "user_id"
     t.string "first_name"
     t.string "last_name"
+    t.string "date_of_birth"
     t.string "gender"
     t.string "nationality"
     t.string "marital_status"
@@ -225,8 +226,8 @@ ActiveRecord::Schema.define(version: 2024_02_21_070131) do
     t.text "permanent_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "date_of_birth"
     t.string "profile_pic"
+    t.text "bio"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -237,6 +238,7 @@ ActiveRecord::Schema.define(version: 2024_02_21_070131) do
     t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
   end
 
   create_table "relieving_details", force: :cascade do |t|
