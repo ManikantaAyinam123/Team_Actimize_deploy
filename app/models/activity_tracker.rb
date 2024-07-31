@@ -1,0 +1,4 @@
+class ActivityTracker < ApplicationRecord
+end
+
+

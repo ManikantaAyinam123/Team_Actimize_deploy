@@ -1,0 +1,3 @@
+class ExpertLeaveBank < ApplicationRecord
+	
+end

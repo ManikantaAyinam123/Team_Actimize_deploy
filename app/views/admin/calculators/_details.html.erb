@@ -1,0 +1,167 @@
+<!-- app/views/admin/calculators/_details.html.erb -->
+<%# if @details %>
+  <!-- <table>
+    <%# @details.each do |label, value| %>
+      <tr>
+        <td><%#= label %></td>
+        <td><%#= value.is_a?(Hash) ? value.to_json : value %></td>
+      </tr>
+    <%# end %>
+   </table> -->
+<%# end %>
+
+
+ 
+<% if @details.present?%>
+<div style="text-align: center;">
+<h2>Pay Slip Breakdown</h2>
+<h3>For CTC: <%= @details["Total CTC"]%> </h3> 
+</div>
+<!-- <h3 style="float: right; margin-right: 50px;">For CTC: <%#= @details["Total CTC"]%> </h3> -->
+
+<table style="margin: 0 auto">
+    <tr>
+      <th>Label</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Basic</td>
+     <td><%= @details["Basic"] %></td>
+    </tr>
+    <tr>
+      <td>HRA</td>
+       <td><%= @details["HRA"] %></td>
+     
+    </tr>
+    <tr>
+      <td>Conveyance</td>
+      <td><%= @details["Conveyance"] %></td>
+   
+    </tr>
+    <tr>
+      <td>Medical</td>
+      <td><%= @details["Medical"] %></td>
+    
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><%= @details["Other"] %></td>
+    
+    </tr>
+  <tr>
+    <td>Deductions (Monthly)</td>
+    <td>
+      <table>
+            <tr>
+              <th>Deductions</th>
+              <th>Amount</th>
+            </tr>
+           <tr>
+            <td>Professional tax</td>
+           <td><%= @details["Deductions"]["Professional Tax"] %></td>
+           </tr>
+           <tr>
+              <td>TDS Monthly</td>
+              <td>
+                  <table>
+                    <tr>
+                      <th>Scheme</th>
+                      <th>Tax</th>
+                    </tr>
+                     <tr>
+                      <td>New</td>
+                      <td><%= @details["Deductions"]["TDS-Monthly"]["New"] %></td>
+
+                    </tr>
+                    <tr>
+                      <td>Old</td>
+                     <td><%= @details["Deductions"]["TDS-Monthly"]["Old"] %></
+                    </tr>
+                 </table>
+              </td>
+           </tr>
+      </table>
+    </td>
+  <tr>
+      <td>Total Salary (Monthly)</td>
+       <td><%= @details["Total Salary"] %></td>
+  </tr> 
+  
+   <tr>
+      <td>Net Salary (Monthly)</td>
+      <td>
+        <table>
+                    <tr>
+                      <th>Scheme</th>
+                      <th>Amount</th>
+                    </tr>
+                     <tr>
+                      <td>New</td>
+                      <td><%= @details["Net Salary"]["New"] %>   </td>
+                    </tr>
+                    <tr>
+                      <td>Old</td>
+                       <td><%= @details["Net Salary"]["Old"] %></td>
+                    </tr>
+        </table>
+      </td>
+  </tr> 
+  
+  <tr>
+      <td>Total CTC</td>
+      <td><%= @details["Total CTC"] %></td>
+  </tr> 
+  
+   <tr>
+      <td>TDS Yearly</td>
+      <td>
+         <table = "TDS YEARLY">
+                    <tr>
+                      <th>Scheme</th>
+                      <th>Amount</th>
+                    </tr>
+                     <tr>
+                      <td>New</td>
+                      <td><%= @details["TDS-Yearly"]["New"] %></td>
+
+                    </tr>
+                    <tr>
+                      <td>Old</td>
+                      <td><%= @details["TDS-Yearly"]["Old"] %></td>
+                    </tr>
+                 </table>
+      </td>
+  </tr>   
+</table>
+<%end%>
+
+
+<style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 20%;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/*td {
+  width: 500px;
+}*/
+
+</style>
+
+
+
+
