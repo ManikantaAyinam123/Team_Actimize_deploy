@@ -72,7 +72,8 @@ class PersonalDetailsController < ApplicationController
 	  # end
 
 			  def profile_pic
-				  @personal_detail = @current_user
+				  @personal_detail = @current_user.personal_detail
+				  binding.pry
 
 				  @personal_detail.profile_pic = params[:profile_pic]
 
