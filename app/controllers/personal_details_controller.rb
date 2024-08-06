@@ -70,9 +70,9 @@ class PersonalDetailsController < ApplicationController
 	  #  	render json: { errors: "Please add personal details first"}
 	  #  end
 	  # end
-	  
+
 			  def profile_pic
-				  @personal_detail = @current_user.personal_detail || @current_user.build_personal_detail
+				  @personal_detail = @current_user
 
 				  @personal_detail.profile_pic = params[:profile_pic]
 
