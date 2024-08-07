@@ -70,6 +70,7 @@ class PersonalDetailsController < ApplicationController
 	   	render json: { errors: "Please add personal details first"}
 	   end
 	  end
+	  
 
 
 	  private
