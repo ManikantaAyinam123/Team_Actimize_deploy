@@ -71,20 +71,6 @@ class PersonalDetailsController < ApplicationController
 	   end
 	  end
 
-			  # def profile_pic
-				#   @personal_detail = @current_user.personal_detail
-				 
-
-				#   @personal_detail.profile_pic = params[:profile_pic]
-
-				# 	  if @personal_detail.save
-				# 	    render json: @personal_detail, status: :created
-				# 	  else
-				# 	    render json: { errors: @personal_detail.errors.full_messages }, status: :unprocessable_entity
-				# 	  end
-		    # end
-
-
 
 	  private
 
