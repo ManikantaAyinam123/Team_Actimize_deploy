@@ -53,36 +53,36 @@ class PersonalDetailsController < ApplicationController
 	
 	
 
-	  # def profile_pic
+	  def profile_pic
 	  
-	  #   @personal_detail = @current_user.personal_detail
+	    @personal_detail = @current_user.personal_detail
 	  
-	  # if @personal_detail.present?
-  	#  	 @personal_detail.profile_pic = params[:profile_pic]
+	  if @personal_detail.present?
+  	 	 @personal_detail.profile_pic = params[:profile_pic]
 	 
-		#   	if @personal_detail.save
-		#       render json: @personal_detail, status: :created
-		#     else
-		#       render json: { errors: @personal_detail.errors.full_messages },
-		#              status: :unprocessable_entity
-		#     end
-	  #  else 
-	  #  	render json: { errors: "Please add personal details first"}
-	  #  end
-	  # end
+		  	if @personal_detail.save
+		      render json: @personal_detail, status: :created
+		    else
+		      render json: { errors: @personal_detail.errors.full_messages },
+		             status: :unprocessable_entity
+		    end
+	   else 
+	   	render json: { errors: "Please add personal details first"}
+	   end
+	  end
 
-			  def profile_pic
-				  @personal_detail = @current_user.personal_detail
+			  # def profile_pic
+				#   @personal_detail = @current_user.personal_detail
 				 
 
-				  @personal_detail.profile_pic = params[:profile_pic]
+				#   @personal_detail.profile_pic = params[:profile_pic]
 
-					  if @personal_detail.save
-					    render json: @personal_detail, status: :created
-					  else
-					    render json: { errors: @personal_detail.errors.full_messages }, status: :unprocessable_entity
-					  end
-		    end
+				# 	  if @personal_detail.save
+				# 	    render json: @personal_detail, status: :created
+				# 	  else
+				# 	    render json: { errors: @personal_detail.errors.full_messages }, status: :unprocessable_entity
+				# 	  end
+		    # end
 
 
 
