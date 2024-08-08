@@ -160,7 +160,7 @@ def index
     end
 
 def sidebar_profile_card
-  if @current_user.present? 
+  if @current_user.present? && @current_user.personal_detail.present?
     current_user = @current_user
    
     render json: {
