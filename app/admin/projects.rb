@@ -42,7 +42,7 @@ ActiveAdmin.register Project do
       row  :end_date
       row :description
       row :assigned_by do |project|
-        project.user.username
+        project.user.name
       end
       row  :assigned_users, as: :select, collection: User.all, multiple: true
     end
