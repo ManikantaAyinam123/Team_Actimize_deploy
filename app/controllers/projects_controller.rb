@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :authorize_request
   
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-   # load_and_authorize_resource	
+   # load_and_authorize_resource  
 
 #  def index
 #   # binding.pry
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
           assigned_by: project.user.name,
           
            members_list: project.assigned_users.map do |user|
-        user.as_json(only: [:id, :email, :name, :designation, :employee_id_number, :date_of_joining, :active])
+        user.as_json(only: [:id, :email, :name,  :designation, :employee_id_number, :date_of_joining, :active])
       end
         )
       end
