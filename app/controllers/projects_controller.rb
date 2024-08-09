@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
       @projects_with_members = @projects.map do |project|
         project.as_json(except: [:user_id]).merge(
           members: project.assigned_users.count,
-          assigned_by: project.user.username,
+          assigned_by: project.user.name,
           
            members_list: project.assigned_users.map do |user|
         user.as_json(only: [:id, :email, :name, :designation, :employee_id_number, :date_of_joining, :active])
