@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
           assigned_by: project.user.username,
           
            members_list: project.assigned_users.map do |user|
-        user.as_json(only: [:id, :email, :name, :username, :designation, :employee_id_number, :date_of_joining, :active])
+        user.as_json(only: [:id, :email, :name, :designation, :employee_id_number, :date_of_joining, :active])
       end
         )
       end
