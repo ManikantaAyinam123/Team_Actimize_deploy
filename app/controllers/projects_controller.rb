@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :authorize_request
   
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-   # load_and_authorize_resource  
+   # load_and_authorize_resource	
 
 #  def index
 #   # binding.pry
@@ -41,10 +41,10 @@ class ProjectsController < ApplicationController
       @projects_with_members = @projects.map do |project|
         project.as_json(except: [:user_id]).merge(
           members: project.assigned_users.count,
-          assigned_by: project.user.name,
+          assigned_by: project.user.username,
           
            members_list: project.assigned_users.map do |user|
-        user.as_json(only: [:id, :email, :name,  :designation, :employee_id_number, :date_of_joining, :active])
+        user.as_json(only: [:id, :email, :name, :designation, :employee_id_number, :date_of_joining, :active])
       end
         )
       end
@@ -171,14 +171,14 @@ def projects
   @projects_owned_with_members = @projects_owned_by_user.map do |project|
     project.as_json(except: [:user_id]).merge(
       members: project.assigned_users.map { |user| user.as_json(only: [:id, :name, :designation]) },
-      assigned_by: project.user.name
+      assigned_by: project.user.username
     )
   end
 
   @projects_part_of_with_members = @projects_part_of.map do |project|
     project.as_json(except: [:user_id]).merge(
       members: project.assigned_users.map { |user| user.as_json(only: [:id, :name, :designation]) },
-      assigned_by: project.user.name
+      assigned_by: project.user.username
     )
   end
 
