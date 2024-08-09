@@ -11,8 +11,7 @@ ActiveAdmin.register Project do
     column :start_date
     column :end_date
     column :description
-    column :assigned_by do |project|
-    project.user.username
+  
   end
     column :assigned_users
     
