@@ -171,14 +171,14 @@ def projects
   @projects_owned_with_members = @projects_owned_by_user.map do |project|
     project.as_json(except: [:user_id]).merge(
       members: project.assigned_users.map { |user| user.as_json(only: [:id, :name, :designation]) },
-      assigned_by: project.user.username
+      assigned_by: project.user.name
     )
   end
 
   @projects_part_of_with_members = @projects_part_of.map do |project|
     project.as_json(except: [:user_id]).merge(
       members: project.assigned_users.map { |user| user.as_json(only: [:id, :name, :designation]) },
-      assigned_by: project.user.username
+      assigned_by: project.user.name
     )
   end
 
