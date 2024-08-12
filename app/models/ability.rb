@@ -27,6 +27,7 @@ class Ability
        can :manage, WorkExperience
        can :manage, Skill
        can :manage, Leave
+       can :manage, CertificateVerification
     
     can :manage, Tax
        can :manage, BankDetail
@@ -38,12 +39,13 @@ class Ability
       # can :index, Project
         # can [:read], Project
        # can :manage, Dashboard
+
        can :manage, Dashboard
        can :manage, EmergencyDetail
        can :manage, PersonalDetail
        can :manage, FamilyDetail
        can :manage, Task
-       can :manage, WorkExperience
+       # can :manage, WorkExperience
        can :manage, Skill
        can :manage, BankDetail
        can :manage, HoursEntry
