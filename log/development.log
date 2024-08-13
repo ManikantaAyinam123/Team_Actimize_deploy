@@ -2088,3 +2088,625 @@ Processing by Admin::ProjectsController#index as HTML
 Completed 200 OK in 115ms (Views: 107.2ms | ActiveRecord: 2.7ms | Allocations: 55485)
 
 
+Started GET "/" for ::1 at 2024-08-12 12:52:18 +0530
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersonalDetailsController#welcome as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 51ms (Views: 2.1ms | ActiveRecord: 7.6ms | Allocations: 10853)
+
+
+Started GET "/admin/login" for ::1 at 2024-08-12 12:52:20 +0530
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mAdminUser Load (2.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 45ms (ActiveRecord: 11.0ms | Allocations: 7315)
+
+
+Started GET "/admin" for ::1 at 2024-08-12 12:52:20 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 190.4ms | Allocations: 63298)
+Completed 200 OK in 206ms (Views: 197.6ms | ActiveRecord: 0.4ms | Allocations: 67244)
+
+
+Started GET "/assets/active_admin-fdd3941a43fa5d6129cc47a882bebe37cb2b2822d5cc6d3ac02270db513e8910.css" for ::1 at 2024-08-12 12:52:20 +0530
+Started GET "/assets/active_admin-9ddc466a9fbe763835500b0f63c1a217d6c8b4ef14c792968b3a20e359c9fd1b.js" for ::1 at 2024-08-12 12:52:20 +0530
+Started GET "/favicon.ico" for ::1 at 2024-08-12 12:52:21 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/admin/users" for ::1 at 2024-08-12 12:52:23 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mPersonalDetail Load (1.0ms)[0m  [1m[34mSELECT "personal_details".* FROM "personal_details"[0m
+  [1m[36mContactDetail Load (0.8ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details"[0m
+  [1m[36mWorkExperience Load (1.5ms)[0m  [1m[34mSELECT "work_experiences".* FROM "work_experiences"[0m
+  [1m[36mSkill Load (1.0ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mHoursEntry Load (0.8ms)[0m  [1m[34mSELECT "hours_entries".* FROM "hours_entries"[0m
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mBankDetail Load (1.0ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mLeave Load (2.0ms)[0m  [1m[34mSELECT "leaves".* FROM "leaves"[0m
+  [1m[36mLeaveBank Load (0.8ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mCACHE LeaveBank Load (0.0ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mBirthday Load (0.7ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Birthday"]]
+  [1m[36mHoliday Load (3.1ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Holiday"]]
+  [1m[36mFamilyDetail Load (0.4ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "FamilyDetail"]]
+  [1m[36mEmergencyDetail Load (0.4ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "EmergencyDetail"]]
+  [1m[36mCACHE BankDetail Load (0.0ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mMerit Load (0.8ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mCACHE Merit Load (0.0ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mPerformanceAppreciation Load (1.3ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCACHE PerformanceAppreciation Load (0.0ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCertificateVerification Load (1.4ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mCACHE CertificateVerification Load (0.0ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mRelievingDetail Load (0.8ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mCACHE RelievingDetail Load (0.0ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mSchedulesAndEvent Load (0.9ms)[0m  [1m[34mSELECT "schedules_and_events".* FROM "schedules_and_events"[0m
+  [1m[36mGadget Load (0.9ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mCACHE Gadget Load (0.0ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mNotification Load (1.0ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mNotificationDevice Load (0.8ms)[0m  [1m[34mSELECT "notification_devices".* FROM "notification_devices"[0m
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 809.8ms | Allocations: 171452)
+Completed 200 OK in 837ms (Views: 656.7ms | ActiveRecord: 159.9ms | Allocations: 175282)
+
+
+Started GET "/admin/users/new" for ::1 at 2024-08-12 12:52:34 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb (Duration: 113.0ms | Allocations: 38477)
+Completed 200 OK in 129ms (Views: 115.9ms | ActiveRecord: 0.7ms | Allocations: 41560)
+
+
+Started POST "/admin/users" for ::1 at 2024-08-12 12:53:08 +0530
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"s@gmail.com", "name"=>"satyanarayana", "username"=>"satya", "roles"=>"Employee", "virtual_roles_attr"=>"Employee", "designation"=>"developer", "employee_id_number"=>"1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "satya"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."employee_id_number" = $1 LIMIT $2[0m  [["employee_id_number", "1234"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@gmail.com"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "name", "username", "designation", "employee_id_number", "roles", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "s@gmail.com"], ["password_digest", "$2a$12$gGSI4inCyj3X1n4Br/Vhz.ayiEkWfkRb9KWfwUkWqSfN3CDswvhcu"], ["name", "satyanarayana"], ["username", "satya"], ["designation", "developer"], ["employee_id_number", "1234"], ["roles", "{Employee}"], ["created_at", "2024-08-12 07:23:09.011131"], ["updated_at", "2024-08-12 07:23:09.011131"]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/admin/users.rb:75:in `create'
+Redirected to http://localhost:3000/admin/users/2
+Completed 302 Found in 389ms (ActiveRecord: 5.7ms | Allocations: 7662)
+
+
+Started GET "/admin/users/2" for ::1 at 2024-08-12 12:53:09 +0530
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "User"], ["resource_id", 2], ["namespace", "admin"]]
+  ↳ config/initializers/will_paginate.rb:7:in `total_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "User"], ["resource_id", 2], ["namespace", "admin"]]
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb (Duration: 71.6ms | Allocations: 42847)
+Completed 200 OK in 80ms (Views: 67.0ms | ActiveRecord: 7.0ms | Allocations: 46637)
+
+
+Started GET "/admin/users" for ::1 at 2024-08-12 12:53:13 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ config/initializers/will_paginate.rb:7:in `total_count'
+  [1m[36mPersonalDetail Load (0.4ms)[0m  [1m[34mSELECT "personal_details".* FROM "personal_details"[0m
+  [1m[36mContactDetail Load (0.3ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details"[0m
+  [1m[36mWorkExperience Load (0.3ms)[0m  [1m[34mSELECT "work_experiences".* FROM "work_experiences"[0m
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mHoursEntry Load (0.3ms)[0m  [1m[34mSELECT "hours_entries".* FROM "hours_entries"[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mBankDetail Load (0.4ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mLeave Load (0.4ms)[0m  [1m[34mSELECT "leaves".* FROM "leaves"[0m
+  [1m[36mLeaveBank Load (0.4ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mCACHE LeaveBank Load (0.0ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Birthday"]]
+  [1m[36mHoliday Load (0.5ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Holiday"]]
+  [1m[36mFamilyDetail Load (0.3ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "FamilyDetail"]]
+  [1m[36mEmergencyDetail Load (0.3ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "EmergencyDetail"]]
+  [1m[36mCACHE BankDetail Load (0.0ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mMerit Load (0.4ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mCACHE Merit Load (0.0ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mPerformanceAppreciation Load (0.4ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCACHE PerformanceAppreciation Load (0.0ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCertificateVerification Load (0.4ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mCACHE CertificateVerification Load (0.0ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mRelievingDetail Load (0.5ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mCACHE RelievingDetail Load (0.0ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mSchedulesAndEvent Load (0.3ms)[0m  [1m[34mSELECT "schedules_and_events".* FROM "schedules_and_events"[0m
+  [1m[36mGadget Load (0.4ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mCACHE Gadget Load (0.0ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mNotificationDevice Load (0.3ms)[0m  [1m[34mSELECT "notification_devices".* FROM "notification_devices"[0m
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 276.2ms | Allocations: 126690)
+Completed 200 OK in 288ms (Views: 269.6ms | ActiveRecord: 10.6ms | Allocations: 129122)
+
+
+Started GET "/admin/users/new" for ::1 at 2024-08-12 12:53:17 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb (Duration: 77.5ms | Allocations: 34943)
+Completed 200 OK in 86ms (Views: 78.5ms | ActiveRecord: 0.3ms | Allocations: 37249)
+
+
+Started POST "/admin/users" for ::1 at 2024-08-12 12:54:09 +0530
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"siva@gmail.com", "name"=>"siva", "username"=>"siva", "roles"=>"Management", "virtual_roles_attr"=>"Management", "designation"=>"HR", "employee_id_number"=>"gh123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "siva"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."employee_id_number" = $1 LIMIT $2[0m  [["employee_id_number", "gh123"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "siva@gmail.com"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "name", "username", "designation", "employee_id_number", "roles", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "siva@gmail.com"], ["password_digest", "$2a$12$qeILdvS21bli4i3tF3n/xOhnbLLhx4w8r9czZUiM0LT1isuMBxTey"], ["name", "siva"], ["username", "siva"], ["designation", "HR"], ["employee_id_number", "gh123"], ["roles", "{Management}"], ["created_at", "2024-08-12 07:24:10.280009"], ["updated_at", "2024-08-12 07:24:10.280009"]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/admin/users.rb:75:in `create'
+Redirected to http://localhost:3000/admin/users/3
+Completed 302 Found in 382ms (ActiveRecord: 4.2ms | Allocations: 6590)
+
+
+Started GET "/admin/users/3" for ::1 at 2024-08-12 12:54:10 +0530
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "User"], ["resource_id", 3], ["namespace", "admin"]]
+  ↳ config/initializers/will_paginate.rb:7:in `total_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "User"], ["resource_id", 3], ["namespace", "admin"]]
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb (Duration: 63.5ms | Allocations: 36102)
+Completed 200 OK in 70ms (Views: 63.6ms | ActiveRecord: 1.3ms | Allocations: 39033)
+
+
+Started GET "/admin/users" for ::1 at 2024-08-12 12:54:12 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ config/initializers/will_paginate.rb:7:in `total_count'
+  [1m[36mPersonalDetail Load (0.3ms)[0m  [1m[34mSELECT "personal_details".* FROM "personal_details"[0m
+  [1m[36mContactDetail Load (0.4ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details"[0m
+  [1m[36mWorkExperience Load (0.4ms)[0m  [1m[34mSELECT "work_experiences".* FROM "work_experiences"[0m
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mHoursEntry Load (0.5ms)[0m  [1m[34mSELECT "hours_entries".* FROM "hours_entries"[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mBankDetail Load (0.4ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mLeave Load (0.3ms)[0m  [1m[34mSELECT "leaves".* FROM "leaves"[0m
+  [1m[36mLeaveBank Load (0.3ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mCACHE LeaveBank Load (0.0ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Birthday"]]
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Holiday"]]
+  [1m[36mFamilyDetail Load (0.3ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "FamilyDetail"]]
+  [1m[36mEmergencyDetail Load (0.4ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "EmergencyDetail"]]
+  [1m[36mCACHE BankDetail Load (0.0ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mMerit Load (6.7ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mCACHE Merit Load (0.0ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mPerformanceAppreciation Load (0.4ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCACHE PerformanceAppreciation Load (0.0ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCertificateVerification Load (0.3ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mCACHE CertificateVerification Load (0.0ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mRelievingDetail Load (0.4ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mCACHE RelievingDetail Load (0.0ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mSchedulesAndEvent Load (0.4ms)[0m  [1m[34mSELECT "schedules_and_events".* FROM "schedules_and_events"[0m
+  [1m[36mGadget Load (0.4ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mCACHE Gadget Load (0.0ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mNotificationDevice Load (0.4ms)[0m  [1m[34mSELECT "notification_devices".* FROM "notification_devices"[0m
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 268.8ms | Allocations: 128829)
+Completed 200 OK in 279ms (Views: 252.7ms | ActiveRecord: 17.7ms | Allocations: 131261)
+
+
+Started GET "/admin/users/new" for ::1 at 2024-08-12 12:54:18 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb (Duration: 74.8ms | Allocations: 34942)
+Completed 200 OK in 81ms (Views: 75.6ms | ActiveRecord: 0.3ms | Allocations: 37252)
+
+
+Started POST "/admin/users" for ::1 at 2024-08-12 12:54:58 +0530
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"syam@gmail.com", "name"=>"syam", "username"=>"syam", "roles"=>"Employee,Management", "virtual_roles_attr"=>"Management", "designation"=>"HR", "employee_id_number"=>"12345", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "syam"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."employee_id_number" = $1 LIMIT $2[0m  [["employee_id_number", "12345"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "syam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "name", "username", "designation", "employee_id_number", "roles", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "syam@gmail.com"], ["password_digest", "$2a$12$BBC769pvngfcaiHQopuSXuXXPVGv2uLZmuw6sOarEpc9tKPGqLD8y"], ["name", "syam"], ["username", "syam"], ["designation", "HR"], ["employee_id_number", "12345"], ["roles", "{Employee,Management}"], ["created_at", "2024-08-12 07:24:58.725625"], ["updated_at", "2024-08-12 07:24:58.725625"]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/admin/users.rb:75:in `create'
+Redirected to http://localhost:3000/admin/users/4
+Completed 302 Found in 382ms (ActiveRecord: 4.1ms | Allocations: 6584)
+
+
+Started GET "/admin/users/4" for ::1 at 2024-08-12 12:54:58 +0530
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "User"], ["resource_id", 4], ["namespace", "admin"]]
+  ↳ config/initializers/will_paginate.rb:7:in `total_count'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "User"], ["resource_id", 4], ["namespace", "admin"]]
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb (Duration: 46.1ms | Allocations: 36097)
+Completed 200 OK in 52ms (Views: 46.4ms | ActiveRecord: 0.9ms | Allocations: 39036)
+
+
+Started GET "/admin/users" for ::1 at 2024-08-12 12:55:01 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ config/initializers/will_paginate.rb:7:in `total_count'
+  [1m[36mPersonalDetail Load (0.4ms)[0m  [1m[34mSELECT "personal_details".* FROM "personal_details"[0m
+  [1m[36mContactDetail Load (0.3ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details"[0m
+  [1m[36mWorkExperience Load (0.4ms)[0m  [1m[34mSELECT "work_experiences".* FROM "work_experiences"[0m
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mHoursEntry Load (0.4ms)[0m  [1m[34mSELECT "hours_entries".* FROM "hours_entries"[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mBankDetail Load (0.3ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mLeave Load (0.4ms)[0m  [1m[34mSELECT "leaves".* FROM "leaves"[0m
+  [1m[36mLeaveBank Load (0.7ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mCACHE LeaveBank Load (0.0ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Birthday"]]
+  [1m[36mHoliday Load (0.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Holiday"]]
+  [1m[36mFamilyDetail Load (0.3ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "FamilyDetail"]]
+  [1m[36mEmergencyDetail Load (1.6ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "EmergencyDetail"]]
+  [1m[36mCACHE BankDetail Load (0.0ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mMerit Load (0.4ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mCACHE Merit Load (0.0ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mPerformanceAppreciation Load (0.5ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCACHE PerformanceAppreciation Load (0.0ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCertificateVerification Load (0.4ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mCACHE CertificateVerification Load (0.0ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mRelievingDetail Load (0.3ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mCACHE RelievingDetail Load (0.0ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mSchedulesAndEvent Load (0.4ms)[0m  [1m[34mSELECT "schedules_and_events".* FROM "schedules_and_events"[0m
+  [1m[36mGadget Load (0.6ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mCACHE Gadget Load (0.0ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mNotificationDevice Load (0.3ms)[0m  [1m[34mSELECT "notification_devices".* FROM "notification_devices"[0m
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 282.8ms | Allocations: 131013)
+Completed 200 OK in 289ms (Views: 272.1ms | ActiveRecord: 11.7ms | Allocations: 133443)
+
+
+Started POST "/login" for ::1 at 2024-08-12 12:58:04 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"siva@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "siva@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 434ms (Views: 1.8ms | ActiveRecord: 7.9ms | Allocations: 10708)
+
+
+Started POST "/skills" for ::1 at 2024-08-12 12:59:03 +0530
+Processing by SkillsController#create as */*
+  Parameters: {"skill_name"=>"Aws", "rating"=>"4.5"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `authorize_request'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 37ms (Views: 0.7ms | ActiveRecord: 6.1ms | Allocations: 9001)
+
+
+Started POST "/skills" for ::1 at 2024-08-12 12:59:25 +0530
+Processing by SkillsController#create as */*
+  Parameters: {"skill_name"=>"Aws", "rating"=>"4.5"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `authorize_request'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/skills_controller.rb:124:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/skills_controller.rb:124:in `create'
+  [1m[36mSkill Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "skills" WHERE "skills"."skill_name" = $1 AND "skills"."user_id" = $2 LIMIT $3[0m  [["skill_name", "Aws"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/skills_controller.rb:124:in `create'
+  [1m[36mSkill Create (1.8ms)[0m  [1m[32mINSERT INTO "skills" ("user_id", "skill_name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["skill_name", "Aws"], ["rating", 4.5], ["created_at", "2024-08-12 07:29:26.340773"], ["updated_at", "2024-08-12 07:29:26.340773"]]
+  ↳ app/controllers/skills_controller.rb:124:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/skills_controller.rb:124:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Skill (0.26ms)
+Completed 201 Created in 67ms (Views: 1.4ms | ActiveRecord: 12.6ms | Allocations: 20909)
+
+
+Started POST "/login" for ::1 at 2024-08-12 13:00:36 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"syam@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "syam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 391ms (Views: 0.9ms | ActiveRecord: 5.5ms | Allocations: 8404)
+
+
+Started POST "/work_experiences" for ::1 at 2024-08-12 13:01:45 +0530
+Processing by WorkExperiencesController#create as */*
+  Parameters: {"organization_name"=>"TCS", "date_of_join"=>"09-12-2019", "date_of_end"=>"20-10-2022", "designation"=>"Tester"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `authorize_request'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/work_experiences_controller.rb:50:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/work_experiences_controller.rb:50:in `create'
+  [1m[36mWorkExperience Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "work_experiences" WHERE "work_experiences"."organization_name" = $1 AND "work_experiences"."user_id" = $2 LIMIT $3[0m  [["organization_name", "TCS"], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/work_experiences_controller.rb:50:in `create'
+  [1m[36mWorkExperience Create (1.5ms)[0m  [1m[32mINSERT INTO "work_experiences" ("user_id", "organization_name", "designation", "date_of_join", "date_of_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["organization_name", "TCS"], ["designation", "Tester"], ["date_of_join", "09-12-2019"], ["date_of_end", "20-10-2022"], ["created_at", "2024-08-12 07:31:45.084771"], ["updated_at", "2024-08-12 07:31:45.084771"]]
+  ↳ app/controllers/work_experiences_controller.rb:50:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/work_experiences_controller.rb:50:in `create'
+[active_model_serializers] Rendered WorkExperienceSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 201 Created in 53ms (Views: 7.6ms | ActiveRecord: 9.9ms | Allocations: 16049)
+
+
+Started POST "/work_experiences" for ::1 at 2024-08-12 13:02:17 +0530
+Processing by WorkExperiencesController#create as */*
+  Parameters: {"organization_name"=>"TCS", "date_of_join"=>"09-12-2019", "date_of_end"=>"20-10-2022", "designation"=>"Tester"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `authorize_request'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 49ms (Views: 1.1ms | ActiveRecord: 9.8ms | Allocations: 17128)
+
+
+Started POST "/login" for ::1 at 2024-08-12 13:04:09 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"s@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 401ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 1083)
+
+
+Started GET "/users" for ::1 at 2024-08-12 14:32:30 +0530
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."name", "users"."username", "users"."designation", "users"."employee_id_number", "users"."roles", "users"."date_of_joining", "users"."active", "users"."notifications_allow" FROM "users" WHERE "users"."active" = $1 AND (('Employee' = ANY (roles) OR 'Management' = ANY (roles)))[0m  [["active", true]]
+  ↳ app/controllers/users_controller.rb:18:in `index'
+No serializer found for resource: #<User id: 1, email: "m@gmail.com", name: "Manikanta", username: "mani", designation: "developer", employee_id_number: "123", roles: ["Management"], date_of_joining: nil, active: true, notifications_allow: false>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.75ms)
+Completed 200 OK in 28ms (Views: 13.6ms | ActiveRecord: 7.1ms | Allocations: 11161)
+
+
+Started GET "/admin/users/new" for ::1 at 2024-08-12 15:22:34 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (2.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb (Duration: 208.9ms | Allocations: 78135)
+Completed 200 OK in 523ms (Views: 236.7ms | ActiveRecord: 61.0ms | Allocations: 94929)
+
+
+Started POST "/admin/users" for ::1 at 2024-08-12 15:23:43 +0530
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ss@gmail.com", "name"=>"siva", "username"=>"siva", "roles"=>"Employee", "virtual_roles_attr"=>"Employee", "designation"=>"developer", "employee_id_number"=>"D1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "siva"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."employee_id_number" = $1 LIMIT $2[0m  [["employee_id_number", "D1234"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ss@gmail.com"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/admin/users.rb:75:in `create'
+Redirected to http://localhost:3000/admin/users/new
+Completed 302 Found in 394ms (ActiveRecord: 7.6ms | Allocations: 6727)
+
+
+Started GET "/admin/users/new" for ::1 at 2024-08-12 15:23:44 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb (Duration: 86.0ms | Allocations: 35014)
+Completed 200 OK in 96ms (Views: 87.6ms | ActiveRecord: 0.3ms | Allocations: 37352)
+
+
+Started POST "/admin/users" for ::1 at 2024-08-12 15:24:16 +0530
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ss@gmail.com", "name"=>"sivaa", "username"=>"sivaa", "roles"=>"Employee", "virtual_roles_attr"=>"Employee", "designation"=>"developer", "employee_id_number"=>"gh123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mAdminUser Load (4.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sivaa"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."employee_id_number" = $1 LIMIT $2[0m  [["employee_id_number", "gh123"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ss@gmail.com"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:75:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/admin/users.rb:75:in `create'
+Redirected to http://localhost:3000/admin/users/new
+Completed 302 Found in 403ms (ActiveRecord: 5.4ms | Allocations: 6249)
+
+
+Started GET "/admin/users/new" for ::1 at 2024-08-12 15:24:17 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/new.html.arb (Duration: 42.1ms | Allocations: 34998)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.3ms | Allocations: 37338)
+
+
+Started POST "/login" for ::1 at 2024-08-13 11:46:40 +0530
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"mani@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mani@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 28ms (Views: 1.6ms | ActiveRecord: 4.5ms | Allocations: 3879)
+
+
+Started GET "/" for ::1 at 2024-08-13 11:47:12 +0530
+Processing by PersonalDetailsController#welcome as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 25ms (Views: 0.8ms | ActiveRecord: 6.4ms | Allocations: 8363)
+
+
+Started GET "/admin/login" for ::1 at 2024-08-13 11:47:15 +0530
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mAdminUser Load (1.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 29ms (ActiveRecord: 5.8ms | Allocations: 6954)
+
+
+Started GET "/admin" for ::1 at 2024-08-13 11:47:15 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 130.4ms | Allocations: 63995)
+Completed 200 OK in 140ms (Views: 134.9ms | ActiveRecord: 0.2ms | Allocations: 67920)
+
+
+Started GET "/assets/active_admin-fdd3941a43fa5d6129cc47a882bebe37cb2b2822d5cc6d3ac02270db513e8910.css" for ::1 at 2024-08-13 11:47:15 +0530
+Started GET "/assets/active_admin-9ddc466a9fbe763835500b0f63c1a217d6c8b4ef14c792968b3a20e359c9fd1b.js" for ::1 at 2024-08-13 11:47:15 +0530
+Started GET "/favicon.ico" for ::1 at 2024-08-13 11:47:15 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/admin/users" for ::1 at 2024-08-13 11:47:17 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (4.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ config/initializers/will_paginate.rb:7:in `total_count'
+  [1m[36mPersonalDetail Load (0.7ms)[0m  [1m[34mSELECT "personal_details".* FROM "personal_details"[0m
+  [1m[36mContactDetail Load (0.6ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details"[0m
+  [1m[36mWorkExperience Load (0.9ms)[0m  [1m[34mSELECT "work_experiences".* FROM "work_experiences"[0m
+  [1m[36mSkill Load (0.8ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mHoursEntry Load (0.8ms)[0m  [1m[34mSELECT "hours_entries".* FROM "hours_entries"[0m
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mBankDetail Load (0.8ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mLeave Load (0.7ms)[0m  [1m[34mSELECT "leaves".* FROM "leaves"[0m
+  [1m[36mLeaveBank Load (0.5ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mCACHE LeaveBank Load (0.0ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks"[0m
+  [1m[36mBirthday Load (0.6ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Birthday"]]
+  [1m[36mHoliday Load (0.4ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."type" = $1[0m  [["type", "Holiday"]]
+  [1m[36mFamilyDetail Load (0.2ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "FamilyDetail"]]
+  [1m[36mEmergencyDetail Load (0.3ms)[0m  [1m[34mSELECT "contact_details".* FROM "contact_details" WHERE "contact_details"."type" = $1[0m  [["type", "EmergencyDetail"]]
+  [1m[36mCACHE BankDetail Load (0.0ms)[0m  [1m[34mSELECT "bank_details".* FROM "bank_details"[0m
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mMerit Load (2.0ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mCACHE Merit Load (0.0ms)[0m  [1m[34mSELECT "merits".* FROM "merits"[0m
+  [1m[36mPerformanceAppreciation Load (0.6ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCACHE PerformanceAppreciation Load (0.0ms)[0m  [1m[34mSELECT "performance_appreciations".* FROM "performance_appreciations"[0m
+  [1m[36mCertificateVerification Load (0.7ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mCACHE CertificateVerification Load (0.0ms)[0m  [1m[34mSELECT "certificate_verifications".* FROM "certificate_verifications"[0m
+  [1m[36mRelievingDetail Load (0.6ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mCACHE RelievingDetail Load (0.0ms)[0m  [1m[34mSELECT "relieving_details".* FROM "relieving_details"[0m
+  [1m[36mSchedulesAndEvent Load (0.8ms)[0m  [1m[34mSELECT "schedules_and_events".* FROM "schedules_and_events"[0m
+  [1m[36mGadget Load (0.6ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mCACHE Gadget Load (0.0ms)[0m  [1m[34mSELECT "gadgets".* FROM "gadgets"[0m
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mNotification Load (0.8ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mNotificationDevice Load (0.6ms)[0m  [1m[34mSELECT "notification_devices".* FROM "notification_devices"[0m
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 515.0ms | Allocations: 184871)
+Completed 200 OK in 560ms (Views: 425.4ms | ActiveRecord: 101.4ms | Allocations: 188665)
+
+
+Started POST "/login" for ::1 at 2024-08-13 11:47:45 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"m@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 391ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 5103)
+
+
+Started GET "/personal_details" for ::1 at 2024-08-13 11:49:42 +0530
+Processing by PersonalDetailsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `authorize_request'
+  [1m[36mPersonalDetail Load (0.3ms)[0m  [1m[34mSELECT "personal_details".* FROM "personal_details" WHERE "personal_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:11:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 49ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 8011)
+
+
+Started POST "/personal_details" for ::1 at 2024-08-13 11:51:01 +0530
+Processing by PersonalDetailsController#create as */*
+  Parameters: {"first_name"=>"bhavaniiiii", "last_name"=>"a", "date_of_birth"=>"20-December-1992", "gender"=>"female", "nationality"=>"Indian", "marital_status"=>"single", "mobile_number"=>"9876524444", "company_email"=>"bhavani@actimize.in", "personal_email"=>"bhavani12@gmail.com", "present_address"=>"kakinada", "permanent_address"=>"permanent_1237_bhavani", "aadhar_card_number"=>"22222221478", "pan_card_number"=>"raghu1595", "profile_pic"=>"faeffadsf"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `authorize_request'
+  [1m[36mPersonalDetail Load (0.3ms)[0m  [1m[34mSELECT "personal_details".* FROM "personal_details" WHERE "personal_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:28:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mPersonalDetail Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "personal_details" WHERE "personal_details"."mobile_number" = $1 LIMIT $2[0m  [["mobile_number", "9876524444"], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mPersonalDetail Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "personal_details" WHERE "personal_details"."company_email" = $1 LIMIT $2[0m  [["company_email", "bhavani@actimize.in"], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mPersonalDetail Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "personal_details" WHERE "personal_details"."personal_email" = $1 LIMIT $2[0m  [["personal_email", "bhavani12@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mPersonalDetail Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "personal_details" WHERE "personal_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mPersonalDetail Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "personal_details" WHERE "personal_details"."aadhar_card_number" = $1 LIMIT $2[0m  [["aadhar_card_number", "22222221478"], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mPersonalDetail Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "personal_details" WHERE "personal_details"."pan_card_number" = $1 LIMIT $2[0m  [["pan_card_number", "raghu1595"], ["LIMIT", 1]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mPersonalDetail Create (1.6ms)[0m  [1m[32mINSERT INTO "personal_details" ("user_id", "first_name", "last_name", "date_of_birth", "gender", "nationality", "marital_status", "mobile_number", "aadhar_card_number", "pan_card_number", "company_email", "personal_email", "present_address", "permanent_address", "created_at", "updated_at", "profile_pic") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["user_id", 1], ["first_name", "bhavaniiiii"], ["last_name", "a"], ["date_of_birth", "20-December-1992"], ["gender", "female"], ["nationality", "Indian"], ["marital_status", "single"], ["mobile_number", "9876524444"], ["aadhar_card_number", "22222221478"], ["pan_card_number", "raghu1595"], ["company_email", "bhavani@actimize.in"], ["personal_email", "bhavani12@gmail.com"], ["present_address", "kakinada"], ["permanent_address", "permanent_1237_bhavani"], ["created_at", "2024-08-13 06:21:01.901951"], ["updated_at", "2024-08-13 06:21:01.901951"], ["profile_pic", "faeffadsf"]]
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/personal_details_controller.rb:34:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/personal_details_controller.rb:36:in `create'
+  [1m[36mActivityTracker Create (1.1ms)[0m  [1m[32mINSERT INTO "activity_trackers" ("headings", "contents", "action_needed", "guest_id", "notification_type", "notification_type_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["headings", "Personal Details Update"], ["contents", "Manikanta has updated Personal details."], ["action_needed", true], ["guest_id", 1], ["notification_type", "Personal Details Update"], ["notification_type_id", 1], ["created_at", "2024-08-13 06:21:01.921864"], ["updated_at", "2024-08-13 06:21:01.921864"], ["user_id", 1]]
+  ↳ app/controllers/personal_details_controller.rb:36:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/personal_details_controller.rb:36:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PersonalDetail (0.35ms)
+Completed 201 Created in 93ms (Views: 1.3ms | ActiveRecord: 19.0ms | Allocations: 42508)
+
+

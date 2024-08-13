@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
 # resources :dashboard
   get '/dashboard', to: 'dashboard#dashboard'
-  post '/profile_pic_change', to:'personal_details#profile_pic'
+  # post '/profile_pic_change', to:'personal_details#profile_pic'
 
   get '/leaves_all', to:'leaves#all_leaves'
 
