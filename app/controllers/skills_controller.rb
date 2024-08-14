@@ -168,7 +168,7 @@ def sidebar_profile_card
         id: current_user.id,
         name: current_user.name,
         designation: current_user.designation,
-        profile_pic: current_user.personal_detail.profile_pic
+       
       }
     }, status: :ok
   else
