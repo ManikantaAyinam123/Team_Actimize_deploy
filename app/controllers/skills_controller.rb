@@ -160,7 +160,7 @@ def index
     end
 
 def sidebar_profile_card
-  if @current_user.present? 
+  if @current_user.present? && @current_user.personal_detail.present?
     current_user = @current_user
    
     render json: {
@@ -168,10 +168,10 @@ def sidebar_profile_card
         id: current_user.id,
         name: current_user.name,
         designation: current_user.designation,
-       
+        profile_pic: current_user.personal_detail.profile_pic
       }
     }, status: :ok
-  elsif @current_user.present? 
+  elsif  @current_user.present? 
     current_user = @current_user
    
     render json: {
