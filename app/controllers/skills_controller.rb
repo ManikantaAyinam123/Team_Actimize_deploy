@@ -171,6 +171,17 @@ def sidebar_profile_card
        
       }
     }, status: :ok
+  elsif @current_user.present? 
+    current_user = @current_user
+   
+    render json: {
+      current_user: {
+        id: current_user.id,
+        name: current_user.name,
+        designation: current_user.designation,
+       
+      }
+    }, status: :ok
   else
     render json: { message: 'No records found' }, status: :ok
   end
