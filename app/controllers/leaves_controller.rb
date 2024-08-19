@@ -178,6 +178,11 @@ end
   expiry = @leave.created_at + 24.hours
   time = Time.now
 
+   if @leave.user == @current_user
+    render json: { message: "You don't have permission to approve your own leave." }, status: :forbidden
+    return
+  end
+
   if time < expiry
     # binding.pry
     if params[:approve] == 'true'

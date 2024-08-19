@@ -2710,3 +2710,37 @@ Can't verify CSRF token authenticity.
 Completed 201 Created in 93ms (Views: 1.3ms | ActiveRecord: 19.0ms | Allocations: 42508)
 
 
+Started GET "/admin/login" for ::1 at 2024-08-19 15:22:25 +0530
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mAdminUser Load (23.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3001/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 263ms (ActiveRecord: 131.2ms | Allocations: 7608)
+
+
+Started GET "/admin" for ::1 at 2024-08-19 15:22:26 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (30.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 706.3ms | Allocations: 63412)
+Completed 200 OK in 1039ms (Views: 766.4ms | ActiveRecord: 30.9ms | Allocations: 68210)
+
+
+Started GET "/assets/active_admin-fdd3941a43fa5d6129cc47a882bebe37cb2b2822d5cc6d3ac02270db513e8910.css" for ::1 at 2024-08-19 15:22:28 +0530
+Started GET "/assets/active_admin-9ddc466a9fbe763835500b0f63c1a217d6c8b4ef14c792968b3a20e359c9fd1b.js" for ::1 at 2024-08-19 15:22:28 +0530
+Started GET "/favicon.ico" for ::1 at 2024-08-19 15:22:30 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/admin/leave_banks" for ::1 at 2024-08-19 15:22:33 +0530
+Processing by Admin::LeaveBanksController#index as HTML
+  [1m[36mAdminUser Load (21.1ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mLeaveBank Load (3.9ms)[0m  [1m[34mSELECT "leave_banks".* FROM "leave_banks" ORDER BY "leave_banks"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered /home/actimize/.rvm/gems/ruby-2.6.5/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 305.2ms | Allocations: 52583)
+Completed 200 OK in 510ms (Views: 294.2ms | ActiveRecord: 65.8ms | Allocations: 57197)
+
+
