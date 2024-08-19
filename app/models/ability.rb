@@ -45,7 +45,7 @@ class Ability
        can :manage, PersonalDetail
        can :manage, FamilyDetail
        can :manage, Task
-       # can :manage, WorkExperience
+       can :manage, WorkExperience
        can :manage, Skill
        can :manage, BankDetail
        can :manage, HoursEntry
